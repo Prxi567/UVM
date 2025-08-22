@@ -47,14 +47,12 @@ class alu_coverage extends uvm_component;
   endfunction
   
    function void extract_phase(uvm_phase phase);
-    super.extract_phase(phase);
-    drv1_cov = driver_cov.get_coverage();
+     super.extract_phase(phase);
     mon1_cov = monitor_cov.get_coverage();
   endfunction
 
   function void report_phase(uvm_phase phase);
     super.report_phase(phase);
-    `uvm_info(get_type_name, $sformatf("[DRIVER] Coverage ------> %0.2f%%,", drv1_cov), UVM_MEDIUM);
     `uvm_info(get_type_name, $sformatf("[MONITOR] Coverage ------> %0.2f%%", mon1_cov), UVM_MEDIUM);
   endfunction
     
