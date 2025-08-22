@@ -39,14 +39,7 @@ class alu_coverage extends uvm_component;
     driver_cov=new;
     monitor_cov=new;
   endfunction
-  
-   function void write_drv_cg(alu_sequence_item t);
-    t1 = t;
-    driver_cov.sample();
-     `uvm_info(get_type_name(),$sformatf("DATA RECEIVED FROM DRIVER IN COV,INP_VALID =%b,CMD=%b,CE=%b,CIN=%b,MODE=%b,OPA=%d,OPB=%d",t1.INP_VALID,t1.CMD,t1.CE,t1.CIN,t1.MODE,t1.OPA,t1.OPB),UVM_NONE);
-  endfunction
-
-  
+    
    function void write_mon_cg(alu_sequence_item t);
     t2 = t;
     monitor_cov.sample();
