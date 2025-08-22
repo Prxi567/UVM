@@ -1,4 +1,5 @@
- class alu_monitor extends uvm_monitor;
+
+class alu_monitor extends uvm_monitor;
   
   virtual alu_interface vif;
     alu_sequence_item q[$];
@@ -94,6 +95,16 @@
   endtask
 
 endclass
+
+
+
+
+
+
+
+
+
+
 
 
 
