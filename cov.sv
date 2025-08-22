@@ -1,5 +1,4 @@
 `uvm_analysis_imp_decl(_mon_cg)
-`uvm_analysis_imp_decl(_drv_cg)
 
 class alu_coverage extends uvm_component;
   alu_sequence_item t1,t2;
@@ -7,19 +6,7 @@ class alu_coverage extends uvm_component;
   `uvm_component_utils(alu_coverage)
   
   uvm_analysis_imp_mon_cg #(alu_sequence_item, alu_coverage) cov_mon;
-  uvm_analysis_imp_drv_cg #(alu_sequence_item, alu_coverage) cov_dri;
-  
- 
-  
-  covergroup driver_cov;
-    INP_VALID :coverpoint t1.INP_VALID { bins inp_valid[]={0,1,2,3};}
-    CMD       :coverpoint t1.CMD { bins cmd[]={[0:13]};}
-    CE        :coverpoint t1.CE {bins ce[]={0,1};}
-    CIN       :coverpoint t1.CIN {bins cin[]={0,1};}
-    MODE      :coverpoint t1.MODE {bins mode[]={0,1};}
-    OPA       :coverpoint t1.OPA {bins opa[]={[0:(1<<`N)-1]};}
-    OPB       :coverpoint t1.OPB {bins opb[]={[0:(1<<`N)-1]};}
-  endgroup
+
   
   covergroup monitor_cov;
     ERR      : coverpoint t2.ERR {bins err[]={0,1};}
